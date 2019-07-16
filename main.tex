@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{depreequantum}
+
+\title{Capacity of Additive White Gaussian Noise channel with BPSK Signaling}
+\author{Aimal Rehman}
+\date{October 2015}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\noindent We derive a closed form expression for the capacity of AWGN channel with $M$-ary signaling from source that follows the uniform distribution for the transmitted symbol.
+\\
+\noindent We will use the following variables:\\
+$y$: Received symbol\\
+$x$: Transmitted symbol\\
+$n$: Additive White Gaussian noise sample\\
+
+\noindent Mathematically, we write AWGN channel as:
+
+\[y = x + n \]
+
+\noindent where $n$ is sampled from the distribution $N(0,1)$ i.e. the Gaussian distribution with zero mean and unit variance. From Information theory, we know that the capacity of the AWGN channel is given by:
+
+\[C = H(y) - H(y|x) \]
+\[= \int f(y) log f(y) dy + \int f(x,y) log f(y|x) dy \]
+
+\noindent Assume that the M-ary signaling source \mathrm{X} draws a symbol \mathcal{x} with the probability \mathcal{p(x)}. Following this, we can write:
+
+\[f(y) = f(y|x)p(x) \]
+
+\[C = -\int\sum_x p(x)f(y|x)logf(y) dy + \int\sum_x f(x,y) log f(y|x) dy \]
+
+\[C = -\int\sum_x p(x=a_k)f(y|x=a_k) log f(y) dy + \int\sum_x f(x=a_k,y) log f(y|x=a_k) dy \]
+
+\[C = -\int\sum_x p(x=a_k)f(y|x=a_k) log f(y) dy + \int\sum_x p(x=a_k)f(y|x=a_k) log f(y|x=a_k) dy \]
+
+\[C = -\int\sum_x p(x=a_k)f(y|x=a_k) log \frac{f(y|x=a_k)}{f(y)} dy \]
+
+\[C = -\frac{1}{M} \int\sum_x f(y|x=a_k) log \frac{f(y|x=a_k)}{f(y)} dy \]
+
+\end{document}

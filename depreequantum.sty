@@ -1,0 +1,90 @@
+\ProvidesPackage{depreequantum}[2018/06/18 Quantum Mechanics Notes]
+
+	% loads more colors
+	\RequirePackage[dvipsnames,svgnames,x11names,table]{xcolor}
+		\definecolor{SeahawkBlue}{RGB}{0,62,126}
+	
+	% To customize page margins, use geometry
+	\RequirePackage{geometry}
+		\geometry{top=1.5in,left=1in, right=1in, bottom = 1.5in}
+	
+	% Control and customize lists
+	\RequirePackage[shortlabels]{enumitem}
+    	
+	% subfigure package
+    	\RequirePackage{subcaption}
+    
+	% TikZ picture environment
+	\RequirePackage{tikz}
+		\usetikzlibrary{arrows, scopes, fadings, positioning, shadings, 
+			decorations, decorations.markings, decorations.pathmorphing,
+			shapes.geometric, shapes.misc}
+
+	% 
+	\renewcommand{\doteq}{\,\dot{=}\,}
+	%% "physics" packages
+		% Physics symbols: using options to make vectors bold and load the SIunitx package
+		\RequirePackage{physics, siunitx}
+		
+		% SI units set-up
+		\sisetup{separate-uncertainty = true}
+		\sisetup{multi-part-units = single}
+		\sisetup{load-configurations = abbreviations}
+		\sisetup{unitspace = { } \cdot { } }
+		\sisetup{per-mode = symbol}
+			\DeclareSIUnit\lightyear{ly}	% declare unit for lightyears
+			\DeclareSIUnit\ly{ly}			% declare unit for lightyears
+			\DeclareSIUnit\Bq{\becquerel}
+			\DeclareSIUnit\y{y}
+			\DeclareSIUnit\year{y}
+			\DeclareSIUnit\min{\minute}
+			\DeclareSIUnit\h{h}
+			\DeclareSIUnit\hour{h}
+			\DeclareSIUnit\AU{AU}
+			\DeclareSIUnit\Gy{\gray}
+			\DeclareSIUnit\Sv{\sievert}
+			\DeclareSIUnit\atm{atm}
+		
+			% Here I define commands to make vectors look the way I want them to
+			\renewcommand{\vector}[1]{\overrightarrow{#1}}
+			\renewcommand{\vec}[1]{\boldsymbol{#1}}
+			\newcommand{\unitvec}[1]{\boldsymbol{\hat{#1}}}
+		
+			% \ensuremath allows me to use these commands outside the math environment and LaTeX will automatically put them in a math environment
+			\newcommand{\unitx}{\ensuremath{\unitvec{x}}}
+			\newcommand{\unity}{\ensuremath{\unitvec{y}}}
+			\newcommand{\unitz}{\ensuremath{\unitvec{z}}}
+			\newcommand{\uniti}{\ensuremath{\unitvec{\imath}}}
+			\newcommand{\unitj}{\ensuremath{\unitvec{\jmath}}}
+			\newcommand{\unitk}{\ensuremath{\,\unitvec{k}}}
+			\newcommand{\unitr}{\ensuremath{\unitvec{r}}}
+			\newcommand{\unitn}{\ensuremath{\unitvec{n}}}
+			\newcommand{\unitphi}{\ensuremath{\unitvec{\phi}}}
+			\newcommand{\unittheta}{\ensuremath{\unitvec{\theta}}}
+	
+	%% "math" packages/set-up
+		\RequirePackage[tbtags]{mathtools}
+
+	%% load tabu package (tabu is a powerful package to make tables)
+	\RequirePackage{tabu,multirow,longtable}
+	
+	%% For easy chemical equations
+	\RequirePackage[version=4]{mhchem}
+	
+	% makes sure that url's are formatted properly
+	\RequirePackage{url}
+	
+    % hyperref creates useful links within the document
+    \RequirePackage[hidelinks]{hyperref}
+    	\hypersetup{
+        	colorlinks=true,
+            linkcolor=black
+        }
+	% Clever references that figures out references --- must be last package regarding numbering/referencing to be loaded
+	\RequirePackage{cleveref}
+    	\crefname{subsection}{subsection}{subsections}
+        \crefname{subsubsection}{subsubsection}{subsubsections}
+
+
+
+\endinput
