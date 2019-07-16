@@ -1,2 +1,5 @@
-# MATLAB-Code-for-the-optimization-of-LDPC-Codes-for-AWGN-Channel
-MATLAB Codes for the optimization of the LDPC codes for a point-to-point link with Additive White Gaussian Noise.
+# Information theoretic analysis of AWGN channel with M-ary signaling
+
+This repository contains:
+1. Mathemtical derivation for the formulation of already knonn capacity of the AWGN channl.
+2. MATLAB codes for the theoretic boudns on achievable rate as a function of modulation depth and source transmit power.
